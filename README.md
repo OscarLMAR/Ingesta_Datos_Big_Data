@@ -706,7 +706,7 @@ Los archivos generados son:
 src/xlsx/cleaned_data.csv
 src/static/auditoria/cleaning_report.txt
 
-EA3 - Enriquecimiento
+# EA3 - Enriquecimiento
 
 Con la muestra limpia de la Actividad 2 disponible, ejecutar:
 
@@ -748,44 +748,64 @@ Flujo automatizado
 El workflow realiza las siguientes etapas:
 
 Instalación de dependencias
+
         ↓
 Extracción desde API
+
         ↓
 Carga en SQLite
+
         ↓
 Control de calidad EA1
+
         ↓
 Validación EA1
+
         ↓
 Transformación
+
         ↓
 Creación de dimensiones
+
         ↓
 Creación de FactVentas
+
         ↓
 Validación final
+
         ↓
 Creación de índices
+
         ↓
 Generación de muestra EA1
+
         ↓
 Generación de auditoría EA1
+
         ↓
 Preprocesamiento y limpieza EA2
+
         ↓
 Generación de cleaned_data.csv
+
         ↓
 Generación de cleaning_report.txt
+
         ↓
 Enriquecimiento con seis fuentes EA3
+
         ↓
 Generación de enriched_data.csv
+
         ↓
 Generación de enrichment_report.txt
+
         ↓
 Verificación de evidencias
+
         ↓
 Publicación del artifact
+
 
 Este flujo permite reconstruir la base de datos y ejecutar las EA1, EA2 y EA3 desde un entorno limpio de GitHub Actions.
 
@@ -801,25 +821,27 @@ El artifact contiene evidencias correspondientes a las tres etapas:
 
 retail.db
 muestra_ingestion.csv
+
 auditoria_extraccion.json
+
 auditoria_carga.json
+
 auditoria_calidad.json
+
 auditoria_final.json
+
 src/static/auditoria/ingestion.txt
+
 src/xlsx/cleaned_data.csv
+
 src/static/auditoria/cleaning_report.txt
+
 src/xlsx/enriched_data.csv
+
 src/static/auditoria/enrichment_report.txt
+
 Verificación de GitHub Actions
 
-Para comprobar una ejecución:
-
-Ingresar al repositorio en GitHub.
-Seleccionar la pestaña Actions.
-Seleccionar el workflow Big Data - Ingesta, Preprocesamiento y Evidencias.
-Abrir la ejecución correspondiente.
-Revisar que todos los pasos finalicen correctamente.
-Consultar el artifact generado al finalizar el flujo.
 
 La ejecución automatizada permite comprobar que las etapas de la EA1, EA2 y EA3 pueden ejecutarse de manera reproducible. El artifact `evidencias-proyecto-big-data` conserva la muestra enriquecida y su auditoría para revisión.
 
@@ -843,28 +865,47 @@ Reducción:                          3,14 %
 Evidencias generadas:
 
 src/xlsx/cleaned_data.csv
+
 src/static/auditoria/cleaning_report.txt
+
 src/xlsx/enriched_data.csv
+
 src/static/auditoria/enrichment_report.txt
-Conclusión
+
+# Conclusión
 
 El proyecto implementa un flujo reproducible de procesamiento de datos que integra:
 
 ingestión mediante API;
+
 almacenamiento en SQLite;
+
 controles de calidad;
+
 validación de datos;
+
 transformación;
+
 modelado dimensional;
+
 generación de una tabla de hechos;
+
 preprocesamiento;
+
 tratamiento de valores nulos;
+
 eliminación de duplicados;
+
 corrección de tipos;
+
 detección de valores atípicos;
+
 generación de variables derivadas;
+
 generación de muestras;
+
 generación de auditorías;
+
 automatización mediante GitHub Actions.
 
 La arquitectura mantiene la continuidad entre la EA1 y la EA2 dentro del mismo repositorio.
