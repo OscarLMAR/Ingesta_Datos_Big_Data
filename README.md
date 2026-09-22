@@ -708,24 +708,30 @@ src/static/auditoria/cleaning_report.txt
 
 # EA3 - Enriquecimiento
 
-Con la muestra limpia de la Actividad 2 disponible, ejecutar:
+Esta etapa toma los datos limpios de la EA2 y les agrega información de otras fuentes. Para ejecutarla, usar:
 
+```bash
 python src/enrichment.py
+```
 
-El script lee seis fuentes complementarias en formatos JSON, XLSX, CSV, XML, HTML y TXT desde `data/fuentes_enriquecimiento`. La fuente XLSX se construye desde su semilla CSV si aún no existe, lo que permite reproducirla en un entorno limpio. Las claves de integración son:
+El script lee seis archivos complementarios desde `data/fuentes_enriquecimiento`. Están en formatos JSON, XLSX, CSV, XML, HTML y TXT. Si el archivo XLSX todavía no existe, se crea a partir de su archivo CSV.
+
+Los datos se relacionan usando estas columnas:
 
 - `StockCode`: catálogo de productos, inventario y promociones.
 - `Country`: región, tasa de impuesto y condiciones de envío.
 - `CustomerID`: segmento y nivel de fidelidad.
 
-Las claves se normalizan con eliminación de espacios y mayúsculas. Se aplican cruces `left join` para conservar todos los registros de la base, se eliminan claves duplicadas de cada fuente conservando la primera ocurrencia y se renombran las columnas con el origen.
+Antes de hacer los cruces, las claves se limpian para evitar diferencias por espacios o mayúsculas. Se usa un `left join`, por lo que se mantienen todos los registros de la base aunque no encuentren información adicional.
 
 Las evidencias de EA3 son:
 
+```text
 src/xlsx/enriched_data.csv
 src/static/auditoria/enrichment_report.txt
+```
 
-El reporte contiene el número de registros base y enriquecidos, las fuentes leídas, claves utilizadas, coincidencias, diferencias, columnas agregadas y transformaciones aplicadas.
+El archivo CSV contiene la muestra enriquecida y el informe TXT resume las fuentes utilizadas, las coincidencias encontradas y las columnas nuevas.
 
 Automatización con GitHub Actions
 
@@ -819,50 +825,69 @@ evidencias-proyecto-big-data
 
 El artifact contiene evidencias correspondientes a las tres etapas:
 
-retail.db
-muestra_ingestion.csv
+- retail.db
 
-auditoria_extraccion.json
+- muestra_ingestion.csv
 
-auditoria_carga.json
+- auditoria_extraccion.json
 
-auditoria_calidad.json
+- auditoria_carga.json
 
-auditoria_final.json
+- auditoria_calidad.json
 
-src/static/auditoria/ingestion.txt
+- auditoria_final.json
 
-src/xlsx/cleaned_data.csv
+- src/static/auditoria/ingestion.txt
 
-src/static/auditoria/cleaning_report.txt
+- src/xlsx/cleaned_data.csv
 
-src/xlsx/enriched_data.csv
+- src/static/auditoria/cleaning_report.txt
 
-src/static/auditoria/enrichment_report.txt
+- src/xlsx/enriched_data.csv
 
-Verificación de GitHub Actions
+- src/static/auditoria/enrichment_report.txt
 
+- Verificación de GitHub Actions
+
+Para comprobar una ejecución:
+
+Ingresar al repositorio en GitHub.
+Seleccionar la pestaña Actions.
+Seleccionar el workflow Big Data - Ingesta, Preprocesamiento y Evidencias.
+Abrir la ejecución correspondiente.
+Revisar que todos los pasos finalicen correctamente.
+Consultar el artifact generado al finalizar el flujo.
 
 La ejecución automatizada permite comprobar que las etapas de la EA1, EA2 y EA3 pueden ejecutarse de manera reproducible. El artifact `evidencias-proyecto-big-data` conserva la muestra enriquecida y su auditoría para revisión.
 
-Resultados finales
+# Resultados finales
 Resultados EA1
+
 Registros extraídos:             541.909
+
 Registros almacenados:            541.909
+
 Diferencia:                            0
 
 Registros válidos:               530.104
+
 Registros en FactVentas:         530.104
+
 Diferencia:                            0
 
 Estado final:                    APROBADO
+
 Resultados EA2
+
 Registros iniciales:             541.909
+
 Registros finales:               524.878
+
 Registros eliminados:             17.031
+
 Reducción:                          3,14 %
 
-Evidencias generadas:
+#Evidencias generadas:
 
 src/xlsx/cleaned_data.csv
 
@@ -872,7 +897,7 @@ src/xlsx/enriched_data.csv
 
 src/static/auditoria/enrichment_report.txt
 
-# Conclusión
+#Conclusión
 
 El proyecto implementa un flujo reproducible de procesamiento de datos que integra:
 
