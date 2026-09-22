@@ -1,0 +1,10 @@
+{
+    "fecha_carga": "2026-09-05 22:13:21",
+    "archivo_origen": "OnlineRetail.csv",
+    "base_destino": "retail.db",
+    "tabla_destino": "stg_online_retail",
+    "registros_origen": 541909,
+    "registros_sqlite": 541909,
+    "diferencia": 0,
+    "estado": "EXITOSO"
+}

@@ -1,0 +1,10 @@
+{
+    "fecha_auditoria": "2026-09-05 22:14:07",
+    "total_registros": 541909,
+    "customer_id_nulos": 135080,
+    "description_nulos": 1454,
+    "cantidad_no_positiva": 10624,
+    "precio_no_positivo": 2517,
+    "facturas_canceladas": 9288,
+    "grupos_duplicados": 4879
+}

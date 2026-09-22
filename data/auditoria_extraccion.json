@@ -1,0 +1,22 @@
+{
+    "fecha_extraccion": "2026-09-05 22:12:08",
+    "fuente": "Kaggle",
+    "dataset": "vijayuv/onlineretail",
+    "metodo": "API pública de Kaggle",
+    "url_api": "https://www.kaggle.com/api/v1/datasets/download/vijayuv/onlineretail",
+    "archivo": "OnlineRetail.csv",
+    "registros": 541909,
+    "columnas": 8,
+    "nombres_columnas": [
+        "InvoiceNo",
+        "StockCode",
+        "Description",
+        "Quantity",
+        "InvoiceDate",
+        "UnitPrice",
+        "CustomerID",
+        "Country"
+    ],
+    "descarga_realizada": false,
+    "estado": "EXITOSO"
+}

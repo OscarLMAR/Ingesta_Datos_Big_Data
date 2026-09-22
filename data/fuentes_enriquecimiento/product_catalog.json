@@ -1,0 +1,9 @@
+[
+  {"StockCode": "21730", "Category": "Decoracion", "Supplier": "Casa Norte", "ProductRating": 4.6},
+  {"StockCode": "22752", "Category": "Regalos", "Supplier": "Mundo Hogar", "ProductRating": 4.4},
+  {"StockCode": "71053", "Category": "Iluminacion", "Supplier": "Luz Viva", "ProductRating": 4.2},
+  {"StockCode": "84029E", "Category": "Textil", "Supplier": "Hogar Calido", "ProductRating": 4.7},
+  {"StockCode": "84029G", "Category": "Textil", "Supplier": "Hogar Calido", "ProductRating": 4.5},
+  {"StockCode": "84406B", "Category": "Organizacion", "Supplier": "Mundo Hogar", "ProductRating": 4.1},
+  {"StockCode": "85123A", "Category": "Iluminacion", "Supplier": "Luz Viva", "ProductRating": 4.8}
+]

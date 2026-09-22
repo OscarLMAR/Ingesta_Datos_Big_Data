@@ -1,0 +1,33 @@
+====================================================================
+EA3 - AUDITORIA DE ENRIQUECIMIENTO DE DATOS
+====================================================================
+
+Fecha de ejecución: 2026-09-21 19:51:13
+Dataset base: src\xlsx\cleaned_data.csv
+Registros base: 100
+Registros enriquecidos: 100
+Columnas base: 9
+Columnas enriquecidas: 22
+
+FUENTES LEIDAS
+- product_catalog.json: 7 registros, 0 claves duplicadas, clave StockCode.
+- inventory_source.xlsx: 7 registros, 0 claves duplicadas, clave StockCode.
+- country_info.csv: 4 registros, 0 claves duplicadas, clave Country.
+- shipping.xml: 4 registros, 0 claves duplicadas, clave Country.
+- customer_segments.html: 4 registros, 0 claves duplicadas, clave CustomerID.
+- promotions.txt: 7 registros, 0 claves duplicadas, clave StockCode.
+
+OPERACIONES DE CRUCE
+- product_catalog.json por StockCode: 21 coincidencias, 79 sin coincidencia, 3 columnas agregadas.
+- inventory_source.xlsx por StockCode: 21 coincidencias, 79 sin coincidencia, 2 columnas agregadas.
+- country_info.csv por Country: 100 coincidencias, 0 sin coincidencia, 2 columnas agregadas.
+- shipping.xml por Country: 100 coincidencias, 0 sin coincidencia, 2 columnas agregadas.
+- customer_segments.html por CustomerID: 96 coincidencias, 4 sin coincidencia, 2 columnas agregadas.
+- promotions.txt por StockCode: 21 coincidencias, 79 sin coincidencia, 2 columnas agregadas.
+
+TRANSFORMACIONES Y OBSERVACIONES
+- Se normalizaron las claves eliminando espacios y aplicando mayúsculas.
+- Se conservaron todos los registros base mediante cruces left join.
+- Las claves duplicadas de cada fuente conservaron la primera ocurrencia.
+- Las columnas de fuentes se renombran con el origen para evitar colisiones.
+- El resultado es una muestra representativa de la salida limpia de la Actividad 2.

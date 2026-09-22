@@ -1,0 +1,75 @@
+============================================================
+EA2 - AUDITORÍA DE PREPROCESAMIENTO Y LIMPIEZA
+============================================================
+
+1. FUENTE DE DATOS
+------------------
+Base de datos: C:\Users\natal\OneDrive\Escritorio\Ingesta_Datos_Big_Data\data\retail.db
+Tabla origen: stg_online_retail
+
+2. ESTADO INICIAL
+-----------------
+Registros iniciales: 541909
+Duplicados exactos: 5268
+Description nulo: 1454
+CustomerID nulo: 135080
+Quantity <= 0: 10624
+UnitPrice <= 0: 2517
+Facturas canceladas: 9288
+Fechas inválidas: 0
+Outliers Quantity (IQR): 58619
+Outliers UnitPrice (IQR): 39627
+
+3. OPERACIONES REALIZADAS
+-------------------------
+1. Eliminación de duplicados exactos.
+2. Eliminación de registros con Quantity <= 0.
+3. Eliminación de registros con UnitPrice <= 0.
+4. Conversión de InvoiceDate a datetime.
+5. Conversión de CustomerID a entero nullable.
+6. Conversión de campos numéricos a tipos apropiados.
+7. Imputación de Description nulo con 'SIN DESCRIPCION'.
+8. Estandarización de espacios en campos de texto.
+9. Creación de la variable TotalVenta.
+10. Ordenamiento cronológico de los registros.
+
+4. TRATAMIENTO DE OUTLIERS
+-------------------------
+Se utilizó el método del rango intercuartílico (IQR)
+para detectar valores estadísticamente extremos.
+
+Quantity - Q1: 1.0
+Quantity - Q3: 10.0
+Quantity - IQR: 9.0
+Quantity - límite superior: 23.5
+Quantity - outliers: 58619
+
+UnitPrice - Q1: 1.25
+UnitPrice - Q3: 4.13
+UnitPrice - IQR: 2.88
+UnitPrice - límite superior: 8.45
+UnitPrice - outliers: 39627
+
+Los outliers fueron identificados y documentados, pero no eliminados automáticamente debido a que un valor extremo no implica necesariamente un error de calidad. Se conservaron para evitar eliminar transacciones potencialmente válidas.
+
+5. IMPACTO DE LA LIMPIEZA
+------------------------
+Registros antes: 541909
+Registros después: 524878
+Registros eliminados: 17031
+Reducción porcentual: 3.14%
+
+6. ESTADO FINAL
+---------------
+Duplicados finales: 0
+Description nulo final: 0
+Fechas inválidas finales: 0
+Quantity <= 0 final: 0
+UnitPrice <= 0 final: 0
+Registros en muestra CSV: 100
+Columnas en resultado: 9
+
+7. RESULTADO
+------------
+ESTADO: APROBADO
+El conjunto de datos cumple las reglas principales de limpieza definidas para la EA2.

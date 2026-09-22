@@ -1,0 +1,44 @@
+{
+    "fecha_auditoria": "2026-09-05 17:56:24",
+    "estado": "APROBADO",
+    "registros": {
+        "originales": 541909,
+        "validos": 530104,
+        "excluidos": 11805,
+        "fact_ventas": 530104
+    },
+    "dimensiones": {
+        "DimFecha": 305,
+        "DimCliente": 4338,
+        "DimProducto": 3922
+    },
+    "clientes": {
+        "con_cliente": 397884,
+        "sin_cliente": 132220
+    },
+    "integridad_referencial": {
+        "fechas_invalidas": 0,
+        "productos_invalidos": 0,
+        "clientes_invalidos": 0
+    },
+    "calidad": {
+        "cantidades_invalidas": 0,
+        "precios_invalidos": 0,
+        "facturas_canceladas": 0,
+        "total_venta_incorrecto": 0
+    },
+    "metricas": {
+        "valor_total_ventas": 10666684.54,
+        "unidades_vendidas": 5588376
+    },
+    "indices": [
+        "idx_dimcliente_customer",
+        "idx_dimfecha_fecha",
+        "idx_dimproducto_stock",
+        "idx_factventas_cliente",
+        "idx_factventas_date",
+        "idx_factventas_invoice",
+        "idx_factventas_producto",
+        "ix_FactVentas_FactVentaID"
+    ]
+}

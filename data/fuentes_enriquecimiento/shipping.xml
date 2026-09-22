@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shipping>
+  <country><Country>UNITED KINGDOM</Country><ShippingDays>3</ShippingDays><ShippingCost>5.50</ShippingCost></country>
+  <country><Country>GERMANY</Country><ShippingDays>5</ShippingDays><ShippingCost>8.00</ShippingCost></country>
+  <country><Country>FRANCE</Country><ShippingDays>5</ShippingDays><ShippingCost>8.00</ShippingCost></country>
+  <country><Country>EIRE</Country><ShippingDays>4</ShippingDays><ShippingCost>7.00</ShippingCost></country>
+</shipping>

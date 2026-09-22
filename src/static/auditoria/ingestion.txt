@@ -1,0 +1,76 @@
+========================================
+AUDITORÍA DE INGESTA DE DATOS
+========================================
+
+Fuente:
+Kaggle - Online Retail
+
+Método de extracción:
+API pública de Kaggle
+
+Archivo de origen:
+OnlineRetail.csv
+
+
+----------------------------------------
+COMPARACIÓN API VS SQLITE
+----------------------------------------
+
+Registros extraídos desde el API:
+541909
+
+Registros almacenados en SQLite:
+541909
+
+Diferencia:
+0
+
+Estado de la ingesta:
+OK
+
+
+----------------------------------------
+PROCESAMIENTO DE DATOS
+----------------------------------------
+
+Registros originales:
+541909
+
+Registros válidos después de las reglas:
+530104
+
+Registros excluidos:
+11805
+
+
+----------------------------------------
+VALIDACIÓN FACTVENTAS
+----------------------------------------
+
+Registros válidos:
+530104
+
+Registros almacenados en FactVentas:
+530104
+
+Diferencia:
+0
+
+Estado:
+OK
+
+
+----------------------------------------
+RESULTADO FINAL
+----------------------------------------
+
+Estado de la auditoría:
+APROBADO
+
+La comparación entre los registros extraídos
+y los registros almacenados en SQLite
+permite verificar la integridad de la ingesta.
+
+========================================
+FIN DE LA AUDITORÍA
+========================================
