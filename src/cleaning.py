@@ -228,17 +228,17 @@ precio_no_positivo_final = int(
 with open(AUDIT_PATH, "w", encoding="utf-8") as archivo:
 
     archivo.write(
-        "============================================================\n"
+
     )
     archivo.write(
         "EA2 - AUDITORÍA DE PREPROCESAMIENTO Y LIMPIEZA\n"
     )
     archivo.write(
-        "============================================================\n\n"
+
     )
 
     archivo.write("1. FUENTE DE DATOS\n")
-    archivo.write("------------------\n")
+
     archivo.write(f"Base de datos: {DB_PATH}\n")
     archivo.write("Tabla origen: stg_online_retail\n\n")
 
